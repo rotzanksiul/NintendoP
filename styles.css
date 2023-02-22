@@ -1,0 +1,1678 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Fonts */
+@font-face {
+    font-family: Nintendo-font;
+    src: url(inconsolata/Inconsolata-Regular.ttf);
+}
+
+
+
+
+
+body {
+    font-family: Nintendo-font;
+    background-color: #ffffff;
+}
+
+.center-container{
+    max-width: 1140px;
+    margin: 0px auto;
+}
+
+
+/*//////// Content Index START ////////*/
+
+/* 1- Header */
+
+/* 2- Navigation Bar */
+
+/* 3- Pseudo Elements */
+
+/* 4- Dropdowns */
+
+/* 5- Hidden Dropdowns */
+
+/* 6- Main Content */
+
+/* 7- Footer */
+
+/*//////// Content Index END ////////*/
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*1-Header Left Side Box*/
+
+.brand-search {
+    display: flex;
+    gap: 1rem;
+}
+
+.brand-icon img {
+    display: block;
+    height: 100%;
+    width: 100px;
+    border-radius: 2px;
+}
+
+.form {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #434242;
+    margin-bottom: .70rem;
+    transition: all 150ms ease-in-out;
+}
+
+.form:hover {
+    border-bottom: 1px solid #e60012;
+    color: #e60012;
+}
+
+
+.input {
+    width: 100%;
+    padding: 1rem .4rem;
+    border: none;
+    height: 30px;
+
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input::placeholder {
+    font-size: 14px;
+}
+
+
+/* Header right Side Box*/
+
+.header-list {
+    display: flex;
+}
+
+.header-list a {
+    text-decoration: none;
+    color: #434242;
+    padding: .5rem 1.2rem;
+    padding-right: 2rem;
+    position: relative;
+    transition: all 150ms ease-in-out;
+}
+
+.header-list a:hover {
+    color: #e60012;
+}
+
+.header-list a:hover span {
+    color: #e60012;
+}
+
+.header-list span {
+    color: #434242;
+    position: absolute;
+    left: 0;
+    top: 0;
+    top: .4rem;
+    left: -.6rem;
+    transition: all 150ms ease-in-out;
+}
+
+/* Hidden brand */
+
+.right-brand {
+    display: none;
+}
+
+.right-brand img {
+    display: block;
+    height: 100%;
+    width: 150px;
+    border-radius: 2px;
+}
+
+
+/* 1- Header End*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2- Navigation Bar */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 0px 1px 0px #434242;
+    position: relative;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+
+}
+
+.list-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #434242;
+    display: block;
+    transition: all 150ms ease-in-out;
+    padding: .5rem 1rem;
+}
+
+.list-link:hover {
+    color: #e60012;
+}
+
+
+
+
+
+
+
+
+
+
+/* 3- Pseudo Elements for icons */
+
+
+.my-nintendo-store-icon::before {
+    content: "\f07a";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.games-icon::before {
+    content: "\f590";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nintendo-switch-icon::before {
+    content: "\f11b";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.news-icon::before {
+    content: "\f1ea";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.star-icon::before {
+    content: "\f005";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dropdown-icon::after {
+    content: "\f078";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 4- Dropdowns Build*/
+
+.dropdown {
+    position: static;
+}
+
+.dropdown-wrapper {
+    position: absolute;
+    top: 2.60rem;
+    left: 0;
+    right: 0;
+    display: none;
+    transition: all 150ms ease-in-out;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+.dropdown.active>.list-link+.dropdown-wrapper{
+    display: block;
+    animation: animate-dropdown 400ms ease-in-out forwards;
+    animation-delay: -150ms;
+}
+
+
+
+
+
+@keyframes animate-dropdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-0px)
+    }
+
+    70% {
+        opacity: 0;
+        transform: translateY(-15px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+/* 4- Dropdowns Build End*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 4-1 Dropdowns content Start*/
+
+
+
+/* Nintendo store Dropdown content*/
+
+.dropdown-store-wrapper {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 3px #888, -2px 2px 3px #888;
+}
+
+
+.nintendo-store-header {
+    background-color: #e60012;
+}
+
+.nintendo-store-header img {
+    width: 300px;
+    height: 100px;
+}
+
+.nintendo-store-content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0rem;
+}
+
+
+
+.nintendo-store-link-content a {
+    text-decoration: none;
+    color: #939393;
+    font-size: .80rem;
+    display: block;
+    padding: .1rem 0rem;
+    text-align: start;
+}
+
+.nintendo-store-content a:hover {
+    color: #e60012;
+}
+
+
+.content-link-title {
+    font-weight: bold;
+    font-size: 1rem !important;
+}
+
+
+/* Nintendo store content - Pseudo Elements  */
+
+.title-link-games::before {
+    content: "\f11b";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .5rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.title-link-hardware::before {
+    content: "\f6cf";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .4rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.title-link-merch::before {
+    content: "\f553";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .5rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.title-link-exclusives::before {
+    content: "\f005";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .5rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*Nintendo-Button */
+
+.button-icon {
+    background-color: #ffffff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    color: #e60012;
+    font-weight: bold;
+    border: 1px solid #e60012;
+    transition: all 150ms ease-in-out;
+}
+
+.button-icon:hover {
+    scale: 1.2;
+    background-color: #F69FA6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Games Dropdown content */
+
+.dropdown-games-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem;
+    gap: 1rem;
+    box-shadow: 2px 2px 3px #888, -2px 2px 3px #888;
+    background-color: #ffffff;
+
+}
+
+
+.games-content {
+    display: flex;
+    height: 8rem;
+}
+
+.games-content a {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    text-decoration: none;
+    color: #939393;
+    transition: all 150ms ease-in-out;
+}
+
+.games-content a:hover {
+    color: #e60012;
+}
+
+.games-content-icon {
+    font-size: 3rem;
+    color: #434242;
+    ;
+    transition: all 150ms ease-in-out;
+    box-shadow: 0px 0px 1px 0px #434242;
+
+}
+
+.games-content a:hover .games-content-icon {
+    color: #ffffff;
+    background-color: #e60012;
+}
+
+
+
+.games-content span {
+    text-align: center;
+    padding: 0rem .5rem;
+}
+
+
+
+
+
+
+
+
+/* Nintendo Switch Dropdown content */
+
+.dropdown-nintendo-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem;
+    gap: 1rem;
+    box-shadow: 2px 2px 3px #888, -2px 2px 3px #888;
+    background-color: #ffffff;
+
+}
+
+
+.nintendo-switch-content {
+    display: flex;
+    height: 8rem;
+}
+
+.nintendo-switch-content a {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    text-decoration: none;
+    color: #939393;
+    transition: all 150ms ease-in-out;
+}
+
+.nintendo-switch-content a:hover {
+    color: #e60012;
+}
+
+.nintendo-switch-content-icon {
+    box-shadow: 0px 0px 1px 0px #434242;
+    transition: all 150ms ease-in-out;
+
+}
+
+.nintendo-switch-content-icon img {
+    height: 75px;
+    width: 200px;
+}
+
+
+.nintendo-switch-content a:hover .nintendo-switch-content-icon {
+    color: #ffffff;
+    background-color: #e60012;
+}
+
+
+
+.nintendo-switch-content span {
+    text-align: center;
+    padding: 0rem .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdowns utilities */
+
+.close-dropdown {
+    position: absolute;
+    cursor: pointer;
+    color: #434242;
+    right: 0;
+    top: 0;
+    top: .75rem;
+    right: .5rem;
+    font-size: 1.5rem;
+}
+
+.close-dropdown:hover {
+    color: #F69FA6;
+}
+
+.blur.active{
+    filter: blur(10px);
+}
+
+
+/* 4-1 Dropdowns content End*/
+
+
+
+
+
+
+
+
+
+
+
+/* 5- Hidden Dropdowns  Start */
+
+.hidden-menu-box {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    top: 92%;
+    position: sticky;
+    display: none;
+    z-index: 1;
+}
+
+
+.hidden-nav {
+    display: flex;
+    gap: 2rem;
+    width: 22rem;
+    background-color: #f8f8f8;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    position: relative;
+    box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+
+}
+
+
+.hidden-menu-link {
+    text-decoration: none;
+    color: #434242;
+
+}
+
+.hidden-menu-button {
+    color: #434242;
+    background: transparent;
+    border: none;
+    display: block;
+
+}
+
+.hidden-nav .hidden-red-button {
+    background-color: #e60012;
+    color: #ffffff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translateY(-10px);
+}
+
+
+
+
+
+/* Hidden Dropdowns Build Start*/
+
+.hidden-dropdown{
+    position: static;
+}
+
+
+
+.hidden-dropdown-wrapper {
+    left: 0;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+    bottom: 4rem;
+    height: 27rem;
+    transition: all 150ms ease-in-out;
+    display: none;
+}
+
+
+.hidden-dropdown.active > .hidden-menu-button + .hidden-dropdown-wrapper{
+    display: block;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    animation: animate-dropdown 400ms ease-in-out forwards;
+    animation-delay: -150ms;
+}
+
+
+
+
+
+
+
+@keyframes animate-dropdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-0px)
+    }
+
+    70% {
+        opacity: 0;
+        transform: translateY(15px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+
+/*  Hidden Dropdowns Build End*/
+
+
+
+
+
+
+
+
+
+ /* 5-1 Hidden Dropdown-content Start  */
+
+
+
+
+/* Hamburger Dropdown-content   */
+
+    .hidden-dropdown-menu-top{
+        background: #f8f8f8;
+        height: 4rem;
+        border-radius: 30px;
+        box-shadow: rgba(0, 0, 0, 0.16) ;
+        box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hidden-dropdown-menu-top h5{
+        font-size: 2.2rem;
+        font-family: Nintendo-font;
+        color: #434242;
+        
+    }
+
+    .hidden-dropdown-menu-bottom{
+        background: #f8f8f8;
+        height: 22rem;
+        margin-top: .5rem;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        box-shadow: rgba(0, 0, 0, 0.16) ;
+        box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    }
+
+
+    .hidden-menu-links{
+        padding: 2rem 2rem;
+        height: 100%;
+    }
+
+    .hidden-menu-links a{
+    display: block;
+    text-decoration: none;
+    color: #434242;
+    padding: .75rem 0rem;
+    box-shadow: 0 1px 0 0 #939393; /* Border bottom */
+    }
+
+
+/* Search Dropdown-content   */
+
+
+
+    /* Form Content */
+
+
+
+    .hidden-form{
+        display: flex;
+        align-items: center;
+        border: none;
+        flex-basis: 80%;
+        border-bottom: 1px solid #e60012;
+    }
+
+    .hidden-form span{
+        margin-top: .5rem;
+        color: #e60012;
+    }
+
+    .hidden-input{
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        width: 100%;
+        
+    }
+
+    .hidden-input::placeholder{
+        font-size: 14px;
+        padding: .5rem .1rem;
+        
+    }
+
+    .hidden-input:focus{
+        outline: none;
+    }
+    
+
+ /* Top Store Products */
+
+ .hidden-dropdown-menu-bottom{
+    font-family: Nintendo-font;
+ }
+
+ .top-store-products {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1rem 1rem;
+ }
+
+ .top-store-products h5{
+    color: #434242;
+    font-weight: bold;
+    font-size: 1.2rem;
+ }
+
+ .store-product{
+    display: flex;
+    gap: .7rem;
+    
+ }
+
+
+ .store-product-description{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    justify-content: space-between;
+    flex-basis: 55%;
+    color: #434242;
+    font-weight: bold;
+ }
+
+.product-console{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.product-brand{
+    color: #939393;
+    border-left: 2px solid #e60012;
+    padding-left: .5rem;
+    
+}
+
+
+.brand-heart{
+    color: #e60012;
+}
+
+
+
+
+ /* Hidden Dropdown-Pseudo elements   */
+
+
+ .hidden-nintendo-store-icon::before {
+    content: "\f07a";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .5rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden-games-icon::before {
+    content: "\f590";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .7rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden-switch-icon::before {
+    content: "\f11b";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .5rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden-news-icon::before {
+    content: "\f1ea";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .7rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden-news-icon::before {
+    content: "\f1ea";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: .7rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden-support-icon::before {
+    content: "\3f";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 1.2rem;
+    color: #e60012;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+/* 5-1 Hidden Dropdown-content End  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 6- Main Content Start*/
+
+.main.active{
+    filter: blur(10px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.game-main-content-background{
+    background-color: #d6f0fa;
+}
+
+.game-main-content-wrapper {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    transform: translateY(2rem);
+    box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+}
+
+
+
+.game-main-content-links {
+    grid-column: span 2;
+    display: flex;
+    gap: .5rem;
+}
+
+.game-main-content-links a {
+    text-decoration: none;
+    font-size: .80rem;
+    color: #434242;
+}
+
+
+.game-main-content-links a::after {
+    content: "\f054";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-left: .2rem;
+    font-size: .75rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* Main Content Left Side */
+
+
+.game-main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.game-image{
+    flex-basis: 340px;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.rating-link-wrapper{
+    display: flex;
+    text-decoration: none;
+    gap: 1rem;
+    color: #939393;
+    align-items: center;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.rating-description{
+    font-size: .90rem;
+    align-self: flex-start;
+    padding-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.text-rating-user{
+    border-top: 1px solid #434242;
+    padding-top: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Content Right Side */
+
+.console-brand-text{
+    color: #939393;
+    font-size: 1rem;
+    border-left: 1px solid #e60012;
+    padding-left: .5rem;
+}
+
+.game-price-download{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.game-name, .game-price{
+    font-size: 2em;
+    color: #434242;
+    font-weight: bold;
+    padding: 1rem 0rem;
+}
+
+.game-price{
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all 150ms ease-in-out;
+}
+
+.game-price-icon{
+    color: #e60012;
+}
+
+.game-price-icon:hover{
+    color: #e60012;
+    scale: 1.5;
+}
+
+.download-button-box{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.download-button{
+    flex-basis: 90%;
+    font-size: 1.3rem;
+    padding: .75rem 0rem;
+    border-radius: 5px;
+    background-color: #e60012;
+    color: #ffffff;
+    border: none;
+    transition: all 150ms ease-in-out;
+}
+
+.download-button:hover{
+    scale: 1.1;
+}
+
+.download-button-text::before {
+    content: "\f019";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Main Content Right Side */
+
+
+
+/* Sinopsis Content Start*/
+
+.game-sinopsis-wrapper{
+    display: flex;
+    gap: 1.75rem;
+    margin-top: 4.5rem;
+    padding: 0rem 1rem;
+}
+
+.games-sinopsis-text-content{
+    font-size: 1em;
+    flex: 1;
+    flex-shrink: 1;
+    color: #939393;
+}
+
+.games-sinopsis-text-content h2{
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #434242;
+    margin-bottom: .6rem;
+}
+
+.games-sinopsis-text-content span{
+    font-size: .80rem;
+    color: #939393;
+}
+
+
+
+.games-sinopsis-Image{
+    display: flex;
+    flex: 1;
+    flex-shrink: 1;
+}
+
+.games-sinopsis-Image img{
+    width: 100%;
+    
+}
+
+
+
+/* Sinopsis Content End*/
+
+
+/* ESRB-Support Modes Content Start*/
+
+.esrb-support-content-wrapper{
+    display: flex;
+    gap: 1.75rem;
+    margin-top: 6rem;
+}
+
+
+.esrb-rating-wrapper{
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+}
+
+.erb-rating-box{
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    background-color: #ffffff;
+    padding: 1.75rem;
+    box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+}
+
+
+.supported-modes{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    align-items: center;
+    padding: 2rem 1.5rem;
+}
+
+.supported-pictures{
+    display: flex;
+    flex-wrap: 1;
+    flex-flow: row wrap;
+    margin-top: 1rem;
+    flex-wrap: 1;
+    box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 2px 5px 6px rgba(0,0,0,0.15);
+}
+
+
+.supported-picture{
+    flex-grow: 1;
+}
+
+.supported-picture:hover{
+    scale: 1.2;
+}
+
+.esrb-title , .supported-title{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #434242;
+    margin-bottom: .75rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Product Info Content Start*/
+
+.Product-info-content{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+.supported-picture img{
+    width: 100%;
+    
+}
+
+.product-info-row{
+    display: flex;
+    padding: 1rem .5rem;
+    align-items: center;
+    gap: 1.5rem;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+}
+
+
+.product-info-title{
+    flex-basis: 35%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    align-items: center;
+    position: relative;
+}
+
+
+.product-info-row-content{
+    flex-basis: 55%;
+}
+
+.row-text{
+    font-size: 1rem;
+    color: #939393;
+}
+
+.product-info-row-content a{
+    color: #e60012;
+    font-weight: bold;
+}
+
+.product-info-row-content a:hover{
+    color: #6d1018;
+    
+    
+}
+
+
+
+/* Product Info Pseudo Elements*/
+
+.icon-title-date::before {
+    content: "\f073";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-size: 1.75rem;
+    margin-right: 1.75rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-title-players::before {
+    content: "\e533";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 1.75rem;
+    font-size: 1.3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-title-genre::before {
+    content: "\f11b";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 1.75rem;
+    font-size: 1.3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-title-publisher::before {
+    content: "\f1ad";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 2.4rem;
+    font-size: 1.3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-title-esrb::before {
+    content: "\f013";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 2.1rem;
+    font-size: 1.3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.icon-title-supported::before {
+    content: "\f26c";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 1.86rem;
+    font-size: 1.3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-title-size::before {
+    content: "\f019";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 2.1rem;
+    font-size: 1.3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-title-laguages::before {
+    content: "\f0ac";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    margin-right: 2.1rem;
+    font-size: 1.3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* Product Info Content End*/
+
+
+
+/* Online info Content Start */
+
+.online-info{
+    display: grid;
+    grid-template-columns: 48% 48%;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+
+.online-text-box{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    padding: 2rem 2rem;
+    font-weight: bold;
+    color: #434242;
+}
+
+.online-text-box-img{
+    margin-bottom: 2rem;
+}
+
+
+
+.online-text-box .online-text-supports{
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+
+.online-text-supports a{
+    color: #e60012;
+}
+
+.online-text-supports a:hover{
+    color: #6d1018;
+}
+
+.online-text-button{
+    width: 9rem;
+    padding: .5rem 1rem;
+    background-color: #e60012;
+    color: #ffffff;
+    border: none;
+    transition: all 150ms ease-in-out;
+    border-radius: 2px;
+}
+
+.online-text-button:hover{
+   scale: 1.1;
+   transform: translateX(10px);
+   background-color: #6d1018;
+}
+
+
+.online--controller-image img{
+    width: 100%;
+}
+
+
+/* Online info Content End */
+
+
+/* Warning Box Content Start */
+
+.warning-box{
+    font-size: .75rem;
+    padding: 2rem 2rem;
+}
+
+/* Warning Box Content End */
+
+
+
+
+
+
+/* 6- Main Content End*/
+
+
+
+
+
+
+
+
+
+
+
+/* 7- Footer Start*/
+
+.footer{
+    background-color: #242424;
+}
+
+.footer.active{
+    filter: blur(20px);
+
+}
+
+
+
+/* Footer Brand */
+
+.footer-brand{
+    display: flex;
+    justify-content: space-between;
+    background-color: #e60012;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    align-items: center;
+
+}
+
+
+
+.footer-socialmedia-icons a{
+    text-decoration: none;
+    color: #d6f0fa;
+    font-size: 2rem;
+}
+
+
+
+/* Footer Boxes */
+
+.footer-content-boxes{
+    display: grid;
+    grid-template-columns: repeat(5,18%);
+    gap: 1rem;
+    padding: 1rem 2rem;
+    padding-bottom: 5rem;
+    justify-content: center;
+ 
+}
+
+
+
+.footer-content-box{
+    background-color: rgba(0,0,0,0.55);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    
+}
+
+.footer-content-box h4{
+    font-size: 1.75rem;
+    font-family: Nintendo-font;
+}
+
+
+.footer-content-box a{
+    font-size: 1rem;
+    font-family: Nintendo-font;
+    color: #d6f0fa;
+    text-decoration: none;
+}
+
+.footer-background-img{
+    position: relative;
+    background-image: url(img/dylan-chikosi-samurai.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.footer-bottom-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 1.5rem 1rem;
+    font-size: .90rem;
+    color: #ffffff;
+    font-family: Nintendo-font;
+    
+}
+
+.bottom-left-text{
+    font-size: .75rem;
+}
+
+.bottom-right-text a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* 7- Footer End*/
+
+
+
+
