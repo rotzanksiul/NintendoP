@@ -1,7 +1,9 @@
 const blur = document.querySelectorAll('.blur')
 
-document.addEventListener('click', e =>{
+//dropdown 
 
+document.addEventListener('click', e =>{
+    
     const isDropdownBtn = e.target.matches('[data-dropdown-btn]');
     if(!isDropdownBtn && e.target.closest('[data-dropdown]') !=null) return
 
@@ -12,6 +14,8 @@ document.addEventListener('click', e =>{
        
     }
     
+  // blur effect in the background
+
     blur.forEach((blu)=>{
         if(isDropdownBtn && currentDropdown.classList.contains('active')){
             blu.classList.add('active')
@@ -20,9 +24,6 @@ document.addEventListener('click', e =>{
         }
     })
 
-   
-
-    
         document.querySelectorAll('[data-dropdown].active').forEach((dropdown)=>{
     if(dropdown === currentDropdown) return
         dropdown.classList.remove('active')
@@ -30,7 +31,6 @@ document.addEventListener('click', e =>{
         }) 
 
      
-        
 });
 
 
