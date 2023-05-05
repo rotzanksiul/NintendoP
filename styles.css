@@ -1297,19 +1297,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.icon-title-laguages::before {
-    content: "\f0ac";
-    display: inline-block;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    margin-right: 2.1rem;
-    font-size: 1.3rem;
-    -webkit-font-smoothing: antialiased;
-}
-
 /* Product Info Content End*/
 
 
